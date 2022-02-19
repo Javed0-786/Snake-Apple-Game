@@ -123,6 +123,31 @@ class Game:
             if self.is_collision(self.snake.x[0], self.snake.y[0], self.snake.x[i], self.snake.y[i]):
                 self.play_sound("crash")
                 raise "game over"
+
+
+        # collision with the left boundary
+        for i in range (2, 676, 4):
+            if self.is_collision(self.snake.x[0], self.snake.y[0], 0, i):
+                self.play_sound("crash")
+                raise "game over"
+
+        # collision with the right boundary
+        for i in range (2, 676, 4):
+            if self.is_collision(self.snake.x[0], self.snake.y[0], 1000, i):
+                self.play_sound("crash")
+                raise "game over"
+
+        # collision with the top boundary
+        for i in range (2, 996, 4):
+            if self.is_collision(self.snake.x[0], self.snake.y[0], i, 0):
+                self.play_sound("crash")
+                raise "game over"
+                
+        # collision with the bottom boundary
+        for i in range (2, 996, 4):
+            if self.is_collision(self.snake.x[0], self.snake.y[0], i, 680):
+                self.play_sound("crash")
+                raise "game over"
                 
     def show_game_over(self):
         self.render_background()

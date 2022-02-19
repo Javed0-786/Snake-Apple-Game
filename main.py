@@ -127,7 +127,7 @@ class Game:
 
         # collision with the left boundary
         for i in range (2, 676, 4):
-            if self.is_collision(self.snake.x[0], self.snake.y[0], 0, i):
+            if self.is_collision(self.snake.x[0], self.snake.y[0], -40, i):
                 self.play_sound("crash")
                 raise "game over"
 
@@ -139,7 +139,7 @@ class Game:
 
         # collision with the top boundary
         for i in range (2, 996, 4):
-            if self.is_collision(self.snake.x[0], self.snake.y[0], i, 0):
+            if self.is_collision(self.snake.x[0], self.snake.y[0], i, -40):
                 self.play_sound("crash")
                 raise "game over"
                 
